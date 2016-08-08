@@ -5,7 +5,7 @@ import SearchForm from './searchform';
 import MovieList from './movielist';
 import $ from 'jquery';
 
- const movies = []
+//const movies = []
 
 export default class App extends Component {
 	constructor(props){
@@ -19,7 +19,7 @@ export default class App extends Component {
 	handleTermSubmit(term){
 		term = term.text;
 		console.log('submit', term)
-		let url="http://www.omdbapi.com/?s="+term+"&r=json";
+		let url=`http://www.omdbapi.com/?s=${term}&r=json`;
 
 
 		$.ajax({
