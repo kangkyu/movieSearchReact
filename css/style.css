@@ -58,6 +58,11 @@ h1 {
   text-align: center;
   padding: 20px 0px; }
 
+@media screen and (max-width: 667px) {
+  .container {
+    padding-top: 30px;
+    width: 100%; } }
+
 .results {
   margin-top: 80px;
   margin-bottom: 180px; }
@@ -97,3 +102,13 @@ h1 {
     color: white;
     border: 0;
     width: 100px; }
+
+@media screen and (max-width: 667px) {
+  .searchform input[type=text] {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+  .searchform input[type=submit] {
+    width: 200px;
+    margin: 0 auto; } }

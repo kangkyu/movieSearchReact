@@ -13,3 +13,10 @@ h1 {
 	text-align: center;
 	padding:20px 0px;
 }
+
+@media screen and (max-width:667px) {
+	.container {
+		padding-top:30px;
+		width:100%;
+	}
+}
