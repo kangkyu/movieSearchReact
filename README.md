@@ -10,4 +10,3 @@ Happy coding, and if you like what you see or want to ask more questions, find m
 
 Go to [http://javascriptla.herokuapp.com] for an invite to JavaScript on #Slack.
 
-Live Demo: [http://vijayxtreme.com/react]
