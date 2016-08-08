@@ -9,3 +9,5 @@ For more info on webpack, check out: [https://medium.com/@dabit3/beginner-s-guid
 Happy coding, and if you like what you see or want to ask more questions, find me on JavaScriptLA's slack (a meetup group I organize for JavaScript learning).
 
 Go to [http://javascriptla.herokuapp.com] for an invite to JavaScript on #Slack.
+
+Live Demo: [http://vijayxtreme.com/react]
