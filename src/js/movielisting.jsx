@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export default class MovieListing extends Component {
 
 	render(){
-		console.log(this.props)
 		return (
 
 			<tr>
@@ -16,9 +15,6 @@ export default class MovieListing extends Component {
 				<td>
 					<p>{this.props.year}</p>
 					
-				</td>
-				<td>
-					<p>{this.props.review}</p>
 				</td>
 			</tr>
 		)

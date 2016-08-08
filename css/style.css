@@ -73,6 +73,10 @@ h1 {
       background-color: #bd95e8; }
     .results table tbody td {
       border: 1px solid #ccc; }
+    .results table tbody td {
+      vertical-align: middle; }
+      .results table tbody td img {
+        height: 150px; }
 
 .searchform {
   text-align: center; }

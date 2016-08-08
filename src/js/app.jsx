@@ -27,6 +27,7 @@ export default class App extends Component {
 	     	dataType:'json',
 	     	cache:false,
 	     	success:function(results){
+	     		console.log(results)
 	     		let movies = results.Search
 	     		this.setState({movies:movies});
 	     		//console.log(this.state.movies.Title);
