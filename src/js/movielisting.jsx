@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
 export default class MovieListing extends Component {
+
 	render(){
+		console.log(this.props)
 		return (
+
 			<tr>
 				<td>
-					<p>{this.props.id}</p>
+					<p><img src={this.props.poster} /></p>
 				</td>
 				<td>
 					<p>{this.props.title}</p>

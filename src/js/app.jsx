@@ -3,25 +3,9 @@ import { Component } from 'react';
 
 import SearchForm from './searchform';
 import MovieList from './movielist';
+import $ from 'jquery';
 
-const movies = [{
-	id:1,
-	title:"Rocky",
-	year:"2001",
-	review:"***"
-},
-{
-	id:2,
-	title:"The Shining",
-	year:"1982",
-	review:"****"
-},
-{
-	id:3,
-	title:"Star Wars",
-	year:"1978",
-	review:"****"
-}]
+ const movies = []
 
 export default class App extends Component {
 	constructor(props){
@@ -29,28 +13,30 @@ export default class App extends Component {
 		this.state = {
 			movies: []
 		}
-		this.getMovies = this.getMovies.bind(this);
+		this.handleTermSubmit = this.handleTermSubmit.bind(this)
 	}
 
-	getMovies(e){
-		//needs to be outside so state can flow down
-		e.preventDefault();
-		//let url="http://www.omdbapi.com/?";
+	handleTermSubmit(term){
+		term = term.text;
+		console.log('submit', term)
+		let url="http://www.omdbapi.com/?s="+term+"&r=json";
+
+
 		$.ajax({
-	     	url:"http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",
+	     	url:url,
 	     	dataType:'json',
 	     	cache:false,
-	     	success:function(movies){
+	     	success:function(results){
+	     		let movies = results.Search
 	     		this.setState({movies:movies});
+	     		//console.log(this.state.movies.Title);
 	     	}.bind(this),
 	     	error:function(xhr, status, err){
 	     		//console.error(this.props.url, status, err.toString());
 	     	}.bind(this)
 	    });
+		
 
-	}
-	handleTermSubmit(term){
-		console.log('submit', term)
 	}
 
 	render(){
@@ -58,7 +44,7 @@ export default class App extends Component {
 			<div>
 				<h1>Search for Movies</h1>
 				<SearchForm onTermSubmit={this.handleTermSubmit}/>
-				<MovieList movies={movies} />
+				<MovieList movies={this.state.movies} />
 			</div>
 		)
 	}
