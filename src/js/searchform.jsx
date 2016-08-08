@@ -2,38 +2,40 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 
 export default class SearchForm extends Component {
+
 	constructor(props){
-		super(props)
+		super(props);
 		this.state = {
-			movies: []
-		}
-		this.getMovies = this.getMovies.bind(this);
+			term: ''
+		};
+
+		//otherwise the this value will be the form, not our class
+		this.handleTermChange = this.handleTermChange.bind(this);
+		this.handleGetMovies = this.handleGetMovies.bind(this);
+	}
+	handleTermChange(e){
+		this.setState({term: e.target.value})
 	}
 
-	getMovies(e){
-		//needs to be outside so state can flow down
+	handleGetMovies(e){
 		e.preventDefault();
-		//let url="http://www.omdbapi.com/?";
-		$.ajax({
-	     	url:"http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",
-	     	dataType:'json',
-	     	cache:false,
-	     	success:function(movies){
-	     		this.setState({movies:movies});
-	     	}.bind(this),
-	     	error:function(xhr, status, err){
-	     		//console.error(this.props.url, status, err.toString());
-	     	}.bind(this)
-	    });
+
+		let term = this.state.term.trim();
+		if(!term || term == '')
+			return
+
+		this.props.onTermSubmit({text:term});
+
+		this.setState({term: ''});
 
 	}
 
 	render(){
 		return (
 	
-			<div className="searchform" onSubmit={this.getMovies}>
+			<div className="searchform" onSubmit={this.handleGetMovies}>
 				<form>
-					<input type="text" placeholder="Search for a movie" autoFocus />
+					<input type="text" placeholder="Search for a movie" autoFocus onChange={this.handleTermChange}/>
 					<input type="submit" value="Search"  />						
 				</form>
 			</div>
