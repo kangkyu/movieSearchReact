@@ -14,7 +14,6 @@ export default class MovieListing extends Component {
 				</td>
 				<td>
 					<p>{this.props.year}</p>
-					
 				</td>
 			</tr>
 		)

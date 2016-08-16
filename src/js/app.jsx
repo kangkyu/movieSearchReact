@@ -21,7 +21,6 @@ export default class App extends Component {
 		console.log('submit', term)
 		let url=`http://www.omdbapi.com/?s=${term}&r=json`;
 
-
 		$.ajax({
 	     	url:url,
 	     	dataType:'json',
@@ -36,8 +35,6 @@ export default class App extends Component {
 	     		//console.error(this.props.url, status, err.toString());
 	     	}.bind(this)
 	    });
-		
-
 	}
 
 	render(){

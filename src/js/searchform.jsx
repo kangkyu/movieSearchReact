@@ -32,11 +32,11 @@ export default class SearchForm extends Component {
 
 	render(){
 		return (
-	
+
 			<div className="searchform" onSubmit={this.handleGetMovies}>
 				<form>
 					<input type="text" placeholder="Search for a movie" autoFocus onChange={this.handleTermChange}/>
-					<input type="submit" value="Search"  />						
+					<input type="submit" value="Search"  />
 				</form>
 			</div>
 		)
